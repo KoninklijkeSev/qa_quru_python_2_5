@@ -15,6 +15,6 @@ def test_practice_form():
     browser.element('[id="submit"]').type('English').press_enter()
     browser.element('[id="uploadPicture"]').send_keys(os.path.abspath('image/picture.jpeg'))
     browser.element('[id = "currentAddress"]').type('Current Address')
-    #browser.element('[id="state"]').type('Har').press_enter()
-    #browser.element('[id="city"]').type('Ka').press_enter()
+    browser.element('#react-select-3-input').type('Haryana').press_enter()
+    browser.element('#react-select-4-input').type('Karnal').press_enter()
     browser.element('[class="modal-title h4"]').should(have.text('Thanks for submitting the form'))
