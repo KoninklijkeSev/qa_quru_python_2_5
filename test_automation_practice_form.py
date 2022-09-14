@@ -1,6 +1,7 @@
 import os
+
+from selene import have
 from selene.support.shared import browser
-from selene import be, have
 
 
 def test_practice_form():
@@ -12,9 +13,10 @@ def test_practice_form():
     browser.element('[for="gender-radio-1"]').click()
     browser.element('[id="userNumber"]').type('799988822211')
     browser.element('[id="dateOfBirthInput"]').clear().type('01.01.1990').press_enter()
-    browser.element('[id="submit"]').type('English').press_enter()
+    browser.element('[id="subjectsInput"]').type('English').press_enter()
     browser.element('[id="uploadPicture"]').send_keys(os.path.abspath('image/picture.jpeg'))
-    browser.element('[id = "currentAddress"]').type('Current Address')
-    browser.element('#react-select-3-input').type('Haryana').press_enter()
-    browser.element('#react-select-4-input').type('Karnal').press_enter()
+    browser.element('[id ="currentAddress"]').type('Address')
+    browser.element('[id="react-select-3-input"]').type('ncr').press_enter()
+    browser.element('[id="react-select-4-input"]').type('gur').press_enter()
+    browser.element('[id="submit"]').press_enter()
     browser.element('[class="modal-title h4"]').should(have.text('Thanks for submitting the form'))
